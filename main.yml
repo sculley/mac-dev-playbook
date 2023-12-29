@@ -25,6 +25,17 @@
     - role: geerlingguy.mac.dock
       when: configure_dock
       tags: ['dock']
+    - role: sculley.mac_setup.iterm2
+      when: iterm2_dynamic_profile_urls
+      tags: ['iterm2']
+    - role: sculley.mac_setup.ohmyzsh
+      tags: ['ohmyzsh']
+    - role: sculley.mac_setup.powerlevel10k
+      when: configure_powerlevel10k
+      tags: ['powerlevel10k']
+    - role: sculley.mac_setup.vscode
+      when: configure_vscode
+      tags: ['vscode']
 
   tasks:
     - import_tasks: tasks/sudoers.yml
